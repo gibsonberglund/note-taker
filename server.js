@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const api = require('./Develop/db/db.json');
+const api = require('./db/db.json');
 const bodyParser = require('body-parser');
 const { randomUUID } = require('crypto');
 const fs = require('fs');

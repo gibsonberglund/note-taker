@@ -20,7 +20,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json())
 
 // get index.html
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'))
 });
 
@@ -30,7 +30,7 @@ app.get('/notes', (req, res) => {
 });
 
 // get db.json
-app.get('/api/notes', (req, res) => res.json(noteData));
+app.get('/api/notes', (req, res) => res.json(api));
 
 // post db.json
 app.post('/api/notes', (req, res) =>{
@@ -74,7 +74,7 @@ if (req.body.title && req.body.text) {
         (writeErr) =>
           writeErr
             ? console.error(writeErr)
-            : console.info('Successfully updated reviews!')
+            : console.info('Successfully updated notes!')
       );
     }
   });
